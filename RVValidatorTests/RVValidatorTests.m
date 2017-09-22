@@ -15,6 +15,9 @@
 #import "RVRuleDate.h"
 #import "RVTextFieldValidator.h"
 #import "RVRuleSize.h"
+#import "RVRuleRegexp.h"
+#import "RVRuleTime.h"
+#import "RVRuleUrl.h"
 
 @interface RVValidatorTests : XCTestCase
 
@@ -100,6 +103,37 @@
     XCTAssertTrue    ( [[RVRuleDate new] validate:@"1984-03-17"]     );
     XCTAssertFalse   ( [[RVRuleDate new] validate:@"1-30-1984"]           );
     XCTAssertTrue    ( [[RVRuleDate make:@[@"dd-MM-yyyy"]] validate:@"25-12-2018"]           );
+}
+
+-(void)test_regexp_date{
+    XCTAssertFalse   ( [[RVRuleRegexp make:@[@"^[0-9a-fA-F]+:"]] validate:nil]               );
+    XCTAssertFalse   ( [[RVRuleRegexp make:@[@"^[0-9a-fA-F]+:"]] validate:@""]               );
+    XCTAssertTrue    ( [[RVRuleRegexp make:@[@"^[0-9a-fA-F]+:"]] validate:@"12a3:"]          );
+    XCTAssertTrue    ( [[RVRuleRegexp make:@[@"^[0-9a-fA-F]+:"]] validate:@"abcdef1234:"]    );
+    XCTAssertFalse   ( [[RVRuleRegexp make:@[@"^[0-9a-fA-F]+:"]] validate:@"PK"]             );
+}
+
+-(void)test_rule_url{
+    XCTAssertTrue   ( [[RVRuleUrl new] validate:nil] );
+    XCTAssertTrue   ( [[RVRuleUrl new] validate:@""] );
+    XCTAssertFalse  ( [[RVRuleUrl new] validate:@"hola"] );
+    XCTAssertTrue   ( [[RVRuleUrl new] validate:@"http://revo.works"] );
+    XCTAssertTrue   ( [[RVRuleUrl new] validate:@"http://admin.revo.works"] );
+    XCTAssertTrue   ( [[RVRuleUrl new] validate:@"http://revo.works/patata"] );
+    //XCTAssertTrue   ( [[RVRuleUrl new] validate:@"http://revo.works/patata?hello=baby"] );
+    XCTAssertTrue   ( [[RVRuleUrl new] validate:@"https://revo.works"] );
+    XCTAssertFalse  ( [[RVRuleUrl new] validate:@"https://revo"] );
+}
+
+-(void)test_rule_time{
+    XCTAssertTrue   ( [[RVRuleTime new] validate:nil] );
+    XCTAssertTrue   ( [[RVRuleTime new] validate:@""] );
+    XCTAssertFalse  ( [[RVRuleTime new] validate:@"something"] );
+    XCTAssertFalse  ( [[RVRuleTime new] validate:@"55:12"] );
+    XCTAssertFalse  ( [[RVRuleTime new] validate:@"04:68"] );
+    XCTAssertTrue   ( [[RVRuleTime new] validate:@"12:12"] );
+    XCTAssertTrue   ( [[RVRuleTime new] validate:@"01:45"] );
+    XCTAssertTrue   ( [[RVRuleTime new] validate:@"1:45"] );
 }
 
 @end

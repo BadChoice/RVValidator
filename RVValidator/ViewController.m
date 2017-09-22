@@ -21,7 +21,7 @@
         TFValidator(self.requiredField, @"required"),
         TFValidator(self.numericField,  @"numeric"),
         TFValidator(self.emailField,    @"required|email"),
-        TFValidator(self.urlField,      @""),
+        TFValidator(self.urlField,      @"url"),
         TFValidator(self.dateField,     @"date:dd-MM-yyyy"),
         TFValidator(self.sizeField,     @"size:4")
         ]

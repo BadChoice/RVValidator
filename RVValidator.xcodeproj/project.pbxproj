@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		764D15B61F756A3B00441501 /* RVRuleDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 764D15B51F756A3B00441501 /* RVRuleDate.m */; };
+		764D15B91F75730600441501 /* RVRuleRegexp.m in Sources */ = {isa = PBXBuildFile; fileRef = 764D15B81F75730600441501 /* RVRuleRegexp.m */; };
+		764D15BC1F7574D300441501 /* RVRuleUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 764D15BB1F7574D300441501 /* RVRuleUrl.m */; };
+		764D15BF1F75750500441501 /* RVRuleTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 764D15BE1F75750500441501 /* RVRuleTime.m */; };
 		7657A4CA1F73F913005E68D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7657A4C91F73F913005E68D8 /* main.m */; };
 		7657A4CD1F73F913005E68D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7657A4CC1F73F913005E68D8 /* AppDelegate.m */; };
 		7657A4D01F73F913005E68D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7657A4CF1F73F913005E68D8 /* ViewController.m */; };
@@ -46,6 +49,12 @@
 		6C64D373DECAA5D097C77587 /* Pods-RVValidatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidatorTests/Pods-RVValidatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		764D15B41F756A3B00441501 /* RVRuleDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleDate.h; path = lib/rules/RVRuleDate.h; sourceTree = "<group>"; };
 		764D15B51F756A3B00441501 /* RVRuleDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleDate.m; path = lib/rules/RVRuleDate.m; sourceTree = "<group>"; };
+		764D15B71F75730600441501 /* RVRuleRegexp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleRegexp.h; path = lib/rules/RVRuleRegexp.h; sourceTree = "<group>"; };
+		764D15B81F75730600441501 /* RVRuleRegexp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleRegexp.m; path = lib/rules/RVRuleRegexp.m; sourceTree = "<group>"; };
+		764D15BA1F7574D300441501 /* RVRuleUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleUrl.h; path = lib/rules/RVRuleUrl.h; sourceTree = "<group>"; };
+		764D15BB1F7574D300441501 /* RVRuleUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleUrl.m; path = lib/rules/RVRuleUrl.m; sourceTree = "<group>"; };
+		764D15BD1F75750500441501 /* RVRuleTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleTime.h; path = lib/rules/RVRuleTime.h; sourceTree = "<group>"; };
+		764D15BE1F75750500441501 /* RVRuleTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleTime.m; path = lib/rules/RVRuleTime.m; sourceTree = "<group>"; };
 		7657A4C51F73F913005E68D8 /* RVValidator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVValidator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7657A4C91F73F913005E68D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7657A4CB1F73F913005E68D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -208,6 +217,12 @@
 				76A5A09E1F75643600F79637 /* RVRuleInteger.m */,
 				764D15B41F756A3B00441501 /* RVRuleDate.h */,
 				764D15B51F756A3B00441501 /* RVRuleDate.m */,
+				764D15B71F75730600441501 /* RVRuleRegexp.h */,
+				764D15B81F75730600441501 /* RVRuleRegexp.m */,
+				764D15BA1F7574D300441501 /* RVRuleUrl.h */,
+				764D15BB1F7574D300441501 /* RVRuleUrl.m */,
+				764D15BD1F75750500441501 /* RVRuleTime.h */,
+				764D15BE1F75750500441501 /* RVRuleTime.m */,
 			);
 			name = rules;
 			sourceTree = "<group>";
@@ -444,11 +459,14 @@
 				7657A4D01F73F913005E68D8 /* ViewController.m in Sources */,
 				76A5A09C1F75632100F79637 /* RVRuleNumeric.m in Sources */,
 				7657A4FE1F73FEEE005E68D8 /* RVRuleSize.m in Sources */,
+				764D15BF1F75750500441501 /* RVRuleTime.m in Sources */,
+				764D15B91F75730600441501 /* RVRuleRegexp.m in Sources */,
 				7657A4CD1F73F913005E68D8 /* AppDelegate.m in Sources */,
 				76A5A09F1F75643600F79637 /* RVRuleInteger.m in Sources */,
 				7657A4F01F73F931005E68D8 /* RVValidator.m in Sources */,
 				7657A4F41F73F98D005E68D8 /* RVValidationRule.m in Sources */,
 				7657A4F71F73F9A1005E68D8 /* RVRuleRequired.m in Sources */,
+				764D15BC1F7574D300441501 /* RVRuleUrl.m in Sources */,
 				7657A4CA1F73F913005E68D8 /* main.m in Sources */,
 				764D15B61F756A3B00441501 /* RVRuleDate.m in Sources */,
 			);
