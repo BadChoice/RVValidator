@@ -17,6 +17,6 @@
 +(RVValidator*)make:(NSArray<RVTextFieldValidator*>*)textFieldValidators;
 -(BOOL)validate;
 -(NSArray*)errors;
--(RVTextFieldValidator*)addLiveValidation;
+-(RVValidator*)addLiveValidation;
 
 @end
