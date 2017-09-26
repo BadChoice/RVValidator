@@ -18,6 +18,8 @@
 #import "RVRuleRegexp.h"
 #import "RVRuleTime.h"
 #import "RVRuleUrl.h"
+#import "RVRuleMax.h"
+#import "RVRuleMin.h"
 
 @interface RVValidatorTests : XCTestCase
 
@@ -134,6 +136,22 @@
     XCTAssertTrue   ( [[RVRuleTime new] validate:@"12:12"] );
     XCTAssertTrue   ( [[RVRuleTime new] validate:@"01:45"] );
     XCTAssertTrue   ( [[RVRuleTime new] validate:@"1:45"] );
+}
+
+-(void)test_rule_min{
+    XCTAssertFalse   ( [[RVRuleMin make:@[@"3"]] validate:nil]               );
+    XCTAssertFalse   ( [[RVRuleMin make:@[@"3"]] validate:@""]               );
+    XCTAssertTrue    ( [[RVRuleMin make:@[@"3"]] validate:@"12a"]          );
+    XCTAssertTrue    ( [[RVRuleMin make:@[@"3"]] validate:@"abcdef1234:"]    );
+    XCTAssertFalse   ( [[RVRuleMin make:@[@"3"]] validate:@"PK"]             );
+}
+
+-(void)test_rule_max{
+    XCTAssertTrue    ( [[RVRuleMax make:@[@"3"]] validate:nil]               );
+    XCTAssertTrue    ( [[RVRuleMax make:@[@"3"]] validate:@""]               );
+    XCTAssertFalse   ( [[RVRuleMax make:@[@"3"]] validate:@"12a3:"]          );
+    XCTAssertFalse   ( [[RVRuleMax make:@[@"3"]] validate:@"abcdef1234:"]    );
+    XCTAssertTrue    ( [[RVRuleMax make:@[@"3"]] validate:@"123"]             );
 }
 
 @end
