@@ -87,6 +87,8 @@
 		76A5A09E1F75643600F79637 /* RVRuleInteger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleInteger.m; path = lib/rules/RVRuleInteger.m; sourceTree = "<group>"; };
 		76A5A0A11F7565D100F79637 /* RVValidationIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVValidationIndicatorView.h; path = lib/views/RVValidationIndicatorView.h; sourceTree = "<group>"; };
 		76A5A0A21F7565D100F79637 /* RVValidationIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVValidationIndicatorView.m; path = lib/views/RVValidationIndicatorView.m; sourceTree = "<group>"; };
+		76BC28D01F7A8BDC008BA8B8 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		76BC28D11F7A8BDC008BA8B8 /* RVValidator.podspec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RVValidator.podspec.json; sourceTree = "<group>"; };
 		A92E4626397225EAF5607BD8 /* Pods-RVValidator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidator/Pods-RVValidator.debug.xcconfig"; sourceTree = "<group>"; };
 		FDCAC948254ECEEBB668CFC1 /* Pods-RVValidator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidator.release.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidator/Pods-RVValidator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				7657A4FF1F74006B005E68D8 /* Podfile */,
+				76BC28D01F7A8BDC008BA8B8 /* readme.md */,
+				76BC28D11F7A8BDC008BA8B8 /* RVValidator.podspec.json */,
 				7657A4C71F73F913005E68D8 /* RVValidator */,
 				7657A4E11F73F913005E68D8 /* RVValidatorTests */,
 				7657A4C61F73F913005E68D8 /* Products */,
