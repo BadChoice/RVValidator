@@ -13,3 +13,4 @@ target 'RVValidatorTests'  do
 end
 
 
+#pod trunk push RVValidator.podspec.json --use-libraries

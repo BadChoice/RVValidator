@@ -78,7 +78,7 @@
 		7657A4FA1F73FD53005E68D8 /* RVRuleEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleEmail.m; path = lib/rules/RVRuleEmail.m; sourceTree = "<group>"; };
 		7657A4FC1F73FEEE005E68D8 /* RVRuleSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleSize.h; path = lib/rules/RVRuleSize.h; sourceTree = "<group>"; };
 		7657A4FD1F73FEEE005E68D8 /* RVRuleSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleSize.m; path = lib/rules/RVRuleSize.m; sourceTree = "<group>"; };
-		7657A4FF1F74006B005E68D8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		7657A4FF1F74006B005E68D8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7657A5011F740203005E68D8 /* RVTextFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVTextFieldValidator.h; path = lib/RVTextFieldValidator.h; sourceTree = "<group>"; };
 		7657A5021F740203005E68D8 /* RVTextFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVTextFieldValidator.m; path = lib/RVTextFieldValidator.m; sourceTree = "<group>"; };
 		76A5A09A1F75632100F79637 /* RVRuleNumeric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleNumeric.h; path = lib/rules/RVRuleNumeric.h; sourceTree = "<group>"; };
