@@ -151,7 +151,8 @@
     XCTAssertTrue    ( [[RVRuleMax make:@[@"3"]] validate:@""]               );
     XCTAssertFalse   ( [[RVRuleMax make:@[@"3"]] validate:@"12a3:"]          );
     XCTAssertFalse   ( [[RVRuleMax make:@[@"3"]] validate:@"abcdef1234:"]    );
-    XCTAssertTrue    ( [[RVRuleMax make:@[@"3"]] validate:@"123"]             );
+    XCTAssertTrue    ( [[RVRuleMax make:@[@"3"]] validate:@"123"]            );
 }
+
 
 @end
