@@ -1,14 +1,14 @@
 {
     "name": "RVValidator",
-    "version": "1.1",
+    "version": "1.1.1",
     "summary": "Laravel validator like for iOS",
     "license": "MIT",
     "platforms": {
-        "ios": "6.0"
+        "ios": "8.0"
     },
     "source": {
         "git": "https://github.com/BadChoice/RVValidator.git",
-        "tag": "1.1"
+        "tag": "1.1.1"
     },
     "dependencies":{
         "Collection": [
