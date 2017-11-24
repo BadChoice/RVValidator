@@ -20,6 +20,8 @@
 #import "RVRuleUrl.h"
 #import "RVRuleMax.h"
 #import "RVRuleMin.h"
+#import "RVRuleNotIn.h"
+#import "RVRuleIn.h"
 
 @interface RVValidatorTests : XCTestCase
 
@@ -152,6 +154,20 @@
     XCTAssertFalse   ( [[RVRuleMax make:@[@"3"]] validate:@"12a3:"]          );
     XCTAssertFalse   ( [[RVRuleMax make:@[@"3"]] validate:@"abcdef1234:"]    );
     XCTAssertTrue    ( [[RVRuleMax make:@[@"3"]] validate:@"123"]             );
+}
+
+-(void)test_rule_not_in{
+    XCTAssertTrue    ( [[RVRuleNotIn make:@[@"1,2,3"]] validate:nil]        );
+    XCTAssertTrue    ( [[RVRuleNotIn make:@[@"1,2,3"]] validate:@""]        );
+    XCTAssertTrue    ( [[RVRuleNotIn make:@[@"1,2,3"]] validate:@"5"]       );
+    XCTAssertFalse   ( [[RVRuleNotIn make:@[@"1,2,3"]] validate:@"3"]       );
+}
+
+-(void)test_rule_in{
+    XCTAssertFalse    ( [[RVRuleIn make:@[@"1,2,3"]] validate:nil]        );
+    XCTAssertFalse    ( [[RVRuleIn make:@[@"1,2,3"]] validate:@""]        );
+    XCTAssertFalse    ( [[RVRuleIn make:@[@"1,2,3"]] validate:@"5"]       );
+    XCTAssertTrue   ( [[RVRuleIn make:@[@"1,2,3"]] validate:@"3"]       );
 }
 
 @end
