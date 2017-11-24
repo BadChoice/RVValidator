@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1339E8751F9E0C4700A4905A /* RVConfirmationRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1339E8741F9E0C4700A4905A /* RVConfirmationRule.m */; };
 		764D15B61F756A3B00441501 /* RVRuleDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 764D15B51F756A3B00441501 /* RVRuleDate.m */; };
 		764D15B91F75730600441501 /* RVRuleRegexp.m in Sources */ = {isa = PBXBuildFile; fileRef = 764D15B81F75730600441501 /* RVRuleRegexp.m */; };
 		764D15BC1F7574D300441501 /* RVRuleUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 764D15BB1F7574D300441501 /* RVRuleUrl.m */; };
@@ -30,8 +31,8 @@
 		76A5A0A31F7565D100F79637 /* RVValidationIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A5A0A21F7565D100F79637 /* RVValidationIndicatorView.m */; };
 		76BC28D41F7A93C2008BA8B8 /* RVRuleMin.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BC28D31F7A93C2008BA8B8 /* RVRuleMin.m */; };
 		76BC28D71F7A941E008BA8B8 /* RVRuleMax.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BC28D61F7A941E008BA8B8 /* RVRuleMax.m */; };
-		775104AC6AE0B2EF58936A87 /* RVRuleNotIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510189034938BBB6082B67 /* RVRuleNotIn.m */; };
-		77510E3D047F2F602E71EA3C /* RVRuleIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510DB65229373D41C8EFDD /* RVRuleIn.m */; };
+		77510197BC87FF3AC98C13D7 /* RVRuleNotIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510029D4E5D7B0CC0D025F /* RVRuleNotIn.m */; };
+		77510444618379D41CB175F3 /* RVRuleIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 775109E3A572550FA64EB34D /* RVRuleIn.m */; };
 		B10067C5921B2CFF86B1F5CC /* libPods-RVValidator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE4F834C420613989DB45CB /* libPods-RVValidator.a */; };
 		EE0D0A1851F3848B8047F724 /* libPods-RVValidatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A933030F887D5AB477973E8 /* libPods-RVValidatorTests.a */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,8 @@
 /* Begin PBXFileReference section */
 		055FD34B4AE8EFA3214A5E29 /* Pods-RVValidatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidatorTests/Pods-RVValidatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0A933030F887D5AB477973E8 /* libPods-RVValidatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RVValidatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1339E8731F9E0C4700A4905A /* RVConfirmationRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RVConfirmationRule.h; path = lib/rules/RVConfirmationRule.h; sourceTree = "<group>"; };
+		1339E8741F9E0C4700A4905A /* RVConfirmationRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RVConfirmationRule.m; path = lib/rules/RVConfirmationRule.m; sourceTree = "<group>"; };
 		3BE4F834C420613989DB45CB /* libPods-RVValidator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RVValidator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C64D373DECAA5D097C77587 /* Pods-RVValidatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidatorTests/Pods-RVValidatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		764D15B41F756A3B00441501 /* RVRuleDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleDate.h; path = lib/rules/RVRuleDate.h; sourceTree = "<group>"; };
@@ -97,10 +100,10 @@
 		76BC28D31F7A93C2008BA8B8 /* RVRuleMin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RVRuleMin.m; path = lib/rules/RVRuleMin.m; sourceTree = "<group>"; };
 		76BC28D51F7A941E008BA8B8 /* RVRuleMax.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RVRuleMax.h; path = lib/rules/RVRuleMax.h; sourceTree = "<group>"; };
 		76BC28D61F7A941E008BA8B8 /* RVRuleMax.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RVRuleMax.m; path = lib/rules/RVRuleMax.m; sourceTree = "<group>"; };
-		7751017DC8A368ED46C002EA /* RVRuleIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleIn.h; path = lib/rules/RVRuleIn.h; sourceTree = "<group>"; };
-		77510189034938BBB6082B67 /* RVRuleNotIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleNotIn.m; path = lib/rules/RVRuleNotIn.m; sourceTree = "<group>"; };
-		77510DB65229373D41C8EFDD /* RVRuleIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleIn.m; path = lib/rules/RVRuleIn.m; sourceTree = "<group>"; };
-		77510F66C6B310850572B918 /* RVRuleNotIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleNotIn.h; path = lib/rules/RVRuleNotIn.h; sourceTree = "<group>"; };
+		77510029D4E5D7B0CC0D025F /* RVRuleNotIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleNotIn.m; path = lib/rules/RVRuleNotIn.m; sourceTree = "<group>"; };
+		775106373B17E0C031B850EC /* RVRuleNotIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleNotIn.h; path = lib/rules/RVRuleNotIn.h; sourceTree = "<group>"; };
+		775109E3A572550FA64EB34D /* RVRuleIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleIn.m; path = lib/rules/RVRuleIn.m; sourceTree = "<group>"; };
+		77510F62A109D46B9DF24AC0 /* RVRuleIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleIn.h; path = lib/rules/RVRuleIn.h; sourceTree = "<group>"; };
 		A92E4626397225EAF5607BD8 /* Pods-RVValidator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidator/Pods-RVValidator.debug.xcconfig"; sourceTree = "<group>"; };
 		FDCAC948254ECEEBB668CFC1 /* Pods-RVValidator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidator.release.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidator/Pods-RVValidator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,10 +246,12 @@
 				76BC28D31F7A93C2008BA8B8 /* RVRuleMin.m */,
 				76BC28D51F7A941E008BA8B8 /* RVRuleMax.h */,
 				76BC28D61F7A941E008BA8B8 /* RVRuleMax.m */,
-				77510F66C6B310850572B918 /* RVRuleNotIn.h */,
-				77510189034938BBB6082B67 /* RVRuleNotIn.m */,
-				77510DB65229373D41C8EFDD /* RVRuleIn.m */,
-				7751017DC8A368ED46C002EA /* RVRuleIn.h */,
+				1339E8731F9E0C4700A4905A /* RVConfirmationRule.h */,
+				1339E8741F9E0C4700A4905A /* RVConfirmationRule.m */,
+				775106373B17E0C031B850EC /* RVRuleNotIn.h */,
+				77510F62A109D46B9DF24AC0 /* RVRuleIn.h */,
+				775109E3A572550FA64EB34D /* RVRuleIn.m */,
+				77510029D4E5D7B0CC0D025F /* RVRuleNotIn.m */,
 			);
 			name = rules;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				7657A4D01F73F913005E68D8 /* ViewController.m in Sources */,
 				76A5A09C1F75632100F79637 /* RVRuleNumeric.m in Sources */,
 				7657A4FE1F73FEEE005E68D8 /* RVRuleSize.m in Sources */,
+				1339E8751F9E0C4700A4905A /* RVConfirmationRule.m in Sources */,
 				764D15BF1F75750500441501 /* RVRuleTime.m in Sources */,
 				764D15B91F75730600441501 /* RVRuleRegexp.m in Sources */,
 				7657A4CD1F73F913005E68D8 /* AppDelegate.m in Sources */,
@@ -495,8 +501,8 @@
 				764D15BC1F7574D300441501 /* RVRuleUrl.m in Sources */,
 				7657A4CA1F73F913005E68D8 /* main.m in Sources */,
 				764D15B61F756A3B00441501 /* RVRuleDate.m in Sources */,
-				775104AC6AE0B2EF58936A87 /* RVRuleNotIn.m in Sources */,
-				77510E3D047F2F602E71EA3C /* RVRuleIn.m in Sources */,
+				77510444618379D41CB175F3 /* RVRuleIn.m in Sources */,
+				77510197BC87FF3AC98C13D7 /* RVRuleNotIn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
