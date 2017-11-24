@@ -9,9 +9,14 @@
 }
 
 -(BOOL)performValidation:(NSString *)text{
-    return [self.whiteList contains:^BOOL(NSString* whiteListElement) {
+    BOOL isIn = [self.whiteList contains:^BOOL(NSString* whiteListElement) {
         return [text isEqualToString:whiteListElement];
     }];
+    if(!isIn){
+        [self addError:@"Value is not in the required list"];
+        return NO;
+    }
+    return YES;
 }
 
 @end

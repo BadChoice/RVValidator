@@ -1,11 +1,3 @@
-//
-//  RVTextFieldValidator.m
-//  RVValidator
-//
-//  Created by Badchoice on 21/9/17.
-//  Copyright © 2017 Revo. All rights reserved.
-//
-
 #import "RVTextFieldValidator.h"
 #import "RVValidationIndicatorView.h"
 #import "RVCollection.h"
@@ -36,7 +28,7 @@
 +(RVValidationRule*)ruleFromString:(NSString*)ruleWithParams{
     NSArray* explode    = [ruleWithParams explode:@":"];
     NSString* rule      = explode[0];
-    Class ruleClass     = NSClassFromString( str(@"RVRule%@", rule.capitalizedString) );
+    Class ruleClass     = NSClassFromString( str(@"RVRule%@", rule.ucFirst) );
     if(explode.count > 1){
         NSArray* params     = [explode[1] explode:@","];
         return [ruleClass make:params];
@@ -52,7 +44,7 @@
     
     self.validIndicatorView.hidden = isValid;
     self.textField.backgroundColor = isValid ? UIColor.whiteColor : self.getInvalidBackgroundColor;
-    
+    if(self.delegate) [self.delegate onValidationChanged];
     return isValid;
 }
 
@@ -77,11 +69,12 @@
 
 -(void)addLiveValidation{
     [self addValidIndicatorView];
-    [self.textField addTarget:self action:@selector(validate) forControlEvents:UIControlEventEditingDidEnd];
+    [self validate];
+    [self.textField addTarget:self action:@selector(validate) forControlEvents:UIControlEventEditingChanged];
 }
 
 -(void)dealloc{
-    [self.textField removeTarget:self action:@selector(validate) forControlEvents:UIControlEventEditingDidEnd];
+    [self.textField removeTarget:self action:@selector(validate) forControlEvents:UIControlEventEditingChanged];
     self.textField  = nil;
     self.rules      = nil;
 }

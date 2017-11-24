@@ -1,11 +1,3 @@
-//
-//  RVRuleMin.m
-//  RVValidator
-//
-//  Created by Badchoice on 26/9/17.
-//  Copyright © 2017 Revo. All rights reserved.
-//
-
 #import "RVRuleMin.h"
 
 @implementation RVRuleMin
@@ -15,7 +7,9 @@
 }
 
 -(BOOL)performValidation:(NSString *)text{
-    
+
+    if(text == nil || [text isEqual:NSNull.null] || text.length == 0) return true;  //The required will check for this
+
     if( text.length < self.min.intValue){
         [self addError:@"Text is shorter than minimum size"];
         return NO;

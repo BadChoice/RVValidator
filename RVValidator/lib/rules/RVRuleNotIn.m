@@ -8,12 +8,15 @@
     self.blackList = [parameters[0] explode:@","];
 }
 
--(BOOL)performValidation:(NSString *)text{
-    if(text == nil || [text isEqual:NSNull.null]) return true;
-
-    return ! [self.blackList contains:^BOOL(NSString* blackListElement) {
+-(BOOL)performValidation:(NSString *)text{if(text == nil || [text isEqual:NSNull.null]) return true;
+    BOOL isIn = [self.blackList contains:^BOOL(NSString* blackListElement) {
         return [text isEqualToString:blackListElement];
     }];
+    if(isIn){
+        [self addError:@"Value is blacklisted"];
+        return NO;
+    }
+    return YES;
 }
 
 @end

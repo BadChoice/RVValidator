@@ -141,10 +141,10 @@
 }
 
 -(void)test_rule_min{
-    XCTAssertFalse   ( [[RVRuleMin make:@[@"3"]] validate:nil]               );
-    XCTAssertFalse   ( [[RVRuleMin make:@[@"3"]] validate:@""]               );
-    XCTAssertTrue    ( [[RVRuleMin make:@[@"3"]] validate:@"12a"]          );
-    XCTAssertTrue    ( [[RVRuleMin make:@[@"3"]] validate:@"abcdef1234:"]    );
+    XCTAssertTrue    ( [[RVRuleMin make:@[@"3"]] validate:nil]               );
+    XCTAssertTrue    ( [[RVRuleMin make:@[@"3"]] validate:@""]               );
+    XCTAssertTrue    ( [[RVRuleMin make:@[@"3"]] validate:@"12a"]            );
+    XCTAssertTrue    ( [[RVRuleMin make:@[@"5"]] validate:@"abcdef1234:"]    );
     XCTAssertFalse   ( [[RVRuleMin make:@[@"3"]] validate:@"PK"]             );
 }
 
@@ -155,7 +155,6 @@
     XCTAssertFalse   ( [[RVRuleMax make:@[@"3"]] validate:@"abcdef1234:"]    );
     XCTAssertTrue    ( [[RVRuleMax make:@[@"3"]] validate:@"123"]            );
 }
-
 
 -(void)test_rule_not_in{
     XCTAssertTrue    ( [[RVRuleNotIn make:@[@"1,2,3"]] validate:nil]        );
@@ -168,7 +167,7 @@
     XCTAssertFalse    ( [[RVRuleIn make:@[@"1,2,3"]] validate:nil]        );
     XCTAssertFalse    ( [[RVRuleIn make:@[@"1,2,3"]] validate:@""]        );
     XCTAssertFalse    ( [[RVRuleIn make:@[@"1,2,3"]] validate:@"5"]       );
-    XCTAssertTrue   ( [[RVRuleIn make:@[@"1,2,3"]] validate:@"3"]       );
+    XCTAssertTrue     ( [[RVRuleIn make:@[@"1,2,3"]] validate:@"3"]       );
 }
 
 @end

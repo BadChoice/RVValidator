@@ -1,22 +1,16 @@
-//
-//  RVValidator.h
-//  RVValidator
-//
-//  Created by Badchoice on 21/9/17.
-//  Copyright © 2017 Revo. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "RVTextFieldValidator.h"
 
-@interface RVValidator : NSObject
-
+@interface RVValidator : NSObject<RVTextFieldLiveValidationDelegate>
 
 @property(strong,nonatomic) NSArray<RVTextFieldValidator*> *textFieldValidators;
+@property (nonatomic, copy) void(^validationChanged)(BOOL valid);
 
-+(RVValidator*)make:(NSArray<RVTextFieldValidator*>*)textFieldValidators;
--(BOOL)validate;
--(NSArray*)errors;
--(RVValidator*)addLiveValidation;
++ (RVValidator*)make:(NSArray<RVTextFieldValidator*>*)textFieldValidators;
+- (BOOL)validate;
+- (NSArray*)errors;
+
+- (RVValidator *)addLiveValidation:(void (^)(BOOL isValid))validationChanged;
+- (RVValidator*)addLiveValidation;
 
 @end

@@ -1,11 +1,3 @@
-//
-//  RVValidator.m
-//  RVValidator
-//
-//  Created by Badchoice on 21/9/17.
-//  Copyright © 2017 Revo. All rights reserved.
-//
-
 #import "RVValidator.h"
 #import "RVCollection.h"
 
@@ -27,11 +19,22 @@
     return [self.textFieldValidators pluck:@"errors"].flatten;    
 }
 
+-(RVValidator*)addLiveValidation:(void(^)(BOOL isValid))validationChanged{
+    self.validationChanged = validationChanged;
+    return [self addLiveValidation];
+}
+
 -(RVValidator*)addLiveValidation{
     [self.textFieldValidators each:^(RVTextFieldValidator* textFieldValidator) {
+        textFieldValidator.delegate = self;
         [textFieldValidator addLiveValidation];
     }];
+    [self validate];
     return self;
+}
+
+-(void)onValidationChanged{
+    if(self.validationChanged) self.validationChanged( self.errors.count == 0 );
 }
 
 @end
