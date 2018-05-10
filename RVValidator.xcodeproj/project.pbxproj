@@ -33,6 +33,9 @@
 		76BC28D71F7A941E008BA8B8 /* RVRuleMax.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BC28D61F7A941E008BA8B8 /* RVRuleMax.m */; };
 		77510197BC87FF3AC98C13D7 /* RVRuleNotIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510029D4E5D7B0CC0D025F /* RVRuleNotIn.m */; };
 		77510444618379D41CB175F3 /* RVRuleIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 775109E3A572550FA64EB34D /* RVRuleIn.m */; };
+		99D82A3363CE6A9065AE791C /* RVRuleSwitchStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D82E77335E1C7D0AA7C267 /* RVRuleSwitchStatus.m */; };
+		99D82BA860A0EF298B6B032E /* RVFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D82F7C2F1EE90C1B6D9867 /* RVFieldValidator.m */; };
+		99D82E333EF389E6900FDE5D /* RVSwitchFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D8275A3906FDBA11D041FF /* RVSwitchFieldValidator.m */; };
 		B10067C5921B2CFF86B1F5CC /* libPods-RVValidator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE4F834C420613989DB45CB /* libPods-RVValidator.a */; };
 		EE0D0A1851F3848B8047F724 /* libPods-RVValidatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A933030F887D5AB477973E8 /* libPods-RVValidatorTests.a */; };
 /* End PBXBuildFile section */
@@ -104,6 +107,12 @@
 		775106373B17E0C031B850EC /* RVRuleNotIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleNotIn.h; path = lib/rules/RVRuleNotIn.h; sourceTree = "<group>"; };
 		775109E3A572550FA64EB34D /* RVRuleIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleIn.m; path = lib/rules/RVRuleIn.m; sourceTree = "<group>"; };
 		77510F62A109D46B9DF24AC0 /* RVRuleIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleIn.h; path = lib/rules/RVRuleIn.h; sourceTree = "<group>"; };
+		99D823505B05B609707C244F /* RVRuleSwitchStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVRuleSwitchStatus.h; sourceTree = "<group>"; };
+		99D824280DDC54BEC978CB0A /* RVSwitchFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVSwitchFieldValidator.h; sourceTree = "<group>"; };
+		99D8275A3906FDBA11D041FF /* RVSwitchFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVSwitchFieldValidator.m; sourceTree = "<group>"; };
+		99D82ABC7D912292A5C0A84E /* RVFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVFieldValidator.h; sourceTree = "<group>"; };
+		99D82E77335E1C7D0AA7C267 /* RVRuleSwitchStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVRuleSwitchStatus.m; sourceTree = "<group>"; };
+		99D82F7C2F1EE90C1B6D9867 /* RVFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVFieldValidator.m; sourceTree = "<group>"; };
 		A92E4626397225EAF5607BD8 /* Pods-RVValidator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidator/Pods-RVValidator.debug.xcconfig"; sourceTree = "<group>"; };
 		FDCAC948254ECEEBB668CFC1 /* Pods-RVValidator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidator.release.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidator/Pods-RVValidator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +224,10 @@
 				7657A4EF1F73F931005E68D8 /* RVValidator.m */,
 				7657A5011F740203005E68D8 /* RVTextFieldValidator.h */,
 				7657A5021F740203005E68D8 /* RVTextFieldValidator.m */,
+				99D8275A3906FDBA11D041FF /* RVSwitchFieldValidator.m */,
+				99D824280DDC54BEC978CB0A /* RVSwitchFieldValidator.h */,
+				99D82F7C2F1EE90C1B6D9867 /* RVFieldValidator.m */,
+				99D82ABC7D912292A5C0A84E /* RVFieldValidator.h */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -252,6 +265,8 @@
 				77510F62A109D46B9DF24AC0 /* RVRuleIn.h */,
 				775109E3A572550FA64EB34D /* RVRuleIn.m */,
 				77510029D4E5D7B0CC0D025F /* RVRuleNotIn.m */,
+				99D82E77335E1C7D0AA7C267 /* RVRuleSwitchStatus.m */,
+				99D823505B05B609707C244F /* RVRuleSwitchStatus.h */,
 			);
 			name = rules;
 			sourceTree = "<group>";
@@ -283,8 +298,6 @@
 				7657A4C11F73F913005E68D8 /* Sources */,
 				7657A4C21F73F913005E68D8 /* Frameworks */,
 				7657A4C31F73F913005E68D8 /* Resources */,
-				B6DF61804A35DF7BEC42594E /* [CP] Embed Pods Frameworks */,
-				9D3918DC5FD9A7B4F9AC5EA3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,8 +316,6 @@
 				7657A4DA1F73F913005E68D8 /* Sources */,
 				7657A4DB1F73F913005E68D8 /* Frameworks */,
 				7657A4DC1F73F913005E68D8 /* Resources */,
-				E3EFA6017F9E6AFEFFF65A63 /* [CP] Embed Pods Frameworks */,
-				4668891CBA81AACFDDBB4D67 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,21 +390,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4668891CBA81AACFDDBB4D67 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RVValidatorTests/Pods-RVValidatorTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5B25BD82C9994C37C5F99EF2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,36 +408,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9D3918DC5FD9A7B4F9AC5EA3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RVValidator/Pods-RVValidator-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B6DF61804A35DF7BEC42594E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RVValidator/Pods-RVValidator-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D2A2688A76E6290AADCF029D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,21 +424,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E3EFA6017F9E6AFEFFF65A63 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RVValidatorTests/Pods-RVValidatorTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -503,6 +454,9 @@
 				764D15B61F756A3B00441501 /* RVRuleDate.m in Sources */,
 				77510444618379D41CB175F3 /* RVRuleIn.m in Sources */,
 				77510197BC87FF3AC98C13D7 /* RVRuleNotIn.m in Sources */,
+				99D82E333EF389E6900FDE5D /* RVSwitchFieldValidator.m in Sources */,
+				99D82BA860A0EF298B6B032E /* RVFieldValidator.m in Sources */,
+				99D82A3363CE6A9065AE791C /* RVRuleSwitchStatus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

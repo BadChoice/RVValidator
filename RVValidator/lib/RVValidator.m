@@ -1,5 +1,6 @@
 #import "RVValidator.h"
 #import "RVCollection.h"
+#import "RVSwitchFieldValidator.h"
 
 @implementation RVValidator
 
@@ -9,9 +10,18 @@
     return validator;
 }
 
++(RVValidator*)make:(NSArray<RVTextFieldValidator*>*)textFieldValidators switchFieldValidators:(NSArray<RVTextFieldValidator*>*)switchFieldValidators{
+    RVValidator * validator         = [RVValidator new];
+    validator.textFieldValidators   = textFieldValidators;
+    validator.switchFieldValidators = switchFieldValidators;
+    return validator;
+}
+
 -(BOOL)validate{
     return [self.textFieldValidators doesntContain:^BOOL(RVTextFieldValidator* textFieldValidator) {
         return ! [textFieldValidator validate];
+    }] && [self.switchFieldValidators doesntContain:^BOOL(RVSwitchFieldValidator* switchFieldValidator) {
+        return ! [switchFieldValidator validate];
     }];
 }
 

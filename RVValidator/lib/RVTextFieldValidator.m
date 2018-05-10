@@ -18,24 +18,6 @@
     return fieldValidator;
 }
 
-+(NSArray<RVValidationRule*>*)rulesFromString:(NSString*)rules{
-    NSArray* rulesWithParams = [rules explode:@"|"];
-    return [rulesWithParams map:^id(NSString* ruleWithParams, NSUInteger idx) {
-        return [self.class ruleFromString:ruleWithParams];
-    }];
-}
-
-+(RVValidationRule*)ruleFromString:(NSString*)ruleWithParams{
-    NSArray* explode    = [ruleWithParams explode:@":"];
-    NSString* rule      = explode[0];
-    Class ruleClass     = NSClassFromString( str(@"RVRule%@", rule.ucFirst) );
-    if(explode.count > 1){
-        NSArray* params     = [explode[1] explode:@","];
-        return [ruleClass make:params];
-    }
-    return [ruleClass new];
-}
-
 -(BOOL)validate{
     [self.rules each:^(RVValidationRule* rule) {
         [rule validate:self.textField.text];
@@ -46,10 +28,6 @@
     self.textField.backgroundColor = isValid ? UIColor.whiteColor : self.getInvalidBackgroundColor;
     if(self.delegate) [self.delegate onValidationChanged];
     return isValid;
-}
-
--(NSArray*)errors{
-    return [self.rules flatten:@"errors"];
 }
 
 -(void)addValidIndicatorView{

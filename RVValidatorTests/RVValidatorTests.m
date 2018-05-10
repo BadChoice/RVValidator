@@ -1,11 +1,3 @@
-//
-//  RVValidatorTests.m
-//  RVValidatorTests
-//
-//  Created by Badchoice on 21/9/17.
-//  Copyright © 2017 Revo. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
 #import "RVRuleEmail.h"
 #import "RVRuleRequired.h"
@@ -13,7 +5,6 @@
 #import "RVRuleInteger.h"
 #import "RVValidator.h"
 #import "RVRuleDate.h"
-#import "RVTextFieldValidator.h"
 #import "RVRuleSize.h"
 #import "RVRuleRegexp.h"
 #import "RVRuleTime.h"
@@ -22,6 +13,8 @@
 #import "RVRuleMin.h"
 #import "RVRuleNotIn.h"
 #import "RVRuleIn.h"
+#import "RVRuleSwitchStatus.h"
+#import "RVSwitchFieldValidator.h"
 
 @interface RVValidatorTests : XCTestCase
 
@@ -41,21 +34,26 @@
     
     UITextField* field1 = [UITextField new];
     UITextField* field2 = [UITextField new];
-    
+    UISwitch*   switchField = [UISwitch new];
+
     field1.text = @"hello baby";
     field2.text = @"bye";
+    switchField.on = false;
     
     RVValidator* validator = [RVValidator make:@[
         TFValidator(field1, @"required|email"),
-        TFValidator(field2, @"size:3")
+        TFValidator(field2, @"size:3"),
+    ] switchFieldValidators:@[
+        SFValidator(switchField, @"status:1")
     ]];
                               
     XCTAssertFalse  ( [validator validate] );
-    XCTAssertTrue   ( validator.errors.count == 1);
+    XCTAssertTrue   ( validator.errors.count == 2);
                               
     field1.text = @"hello@baby.com";
     field2.text = @"bye";
-    
+    switchField.on = true;
+
     XCTAssertTrue   ( [validator validate] );
     XCTAssertTrue   ( validator.errors.count == 0);
 }
@@ -168,6 +166,13 @@
     XCTAssertFalse    ( [[RVRuleIn make:@[@"1,2,3"]] validate:@""]        );
     XCTAssertFalse    ( [[RVRuleIn make:@[@"1,2,3"]] validate:@"5"]       );
     XCTAssertTrue     ( [[RVRuleIn make:@[@"1,2,3"]] validate:@"3"]       );
+}
+
+- (void)test_rule_switch_on {
+    XCTAssertFalse   ( [[RVRuleSwitchStatus make:@[@0]] validate:@"YES"]);
+    XCTAssertFalse   ( [[RVRuleSwitchStatus make:@[@1]] validate:@"NO"] );
+    XCTAssertTrue    ( [[RVRuleSwitchStatus make:@[@0]] validate:@"NO"] );
+    XCTAssertTrue    ( [[RVRuleSwitchStatus make:@[@1]] validate:@"YES"]);
 }
 
 @end
