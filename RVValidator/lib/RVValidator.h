@@ -1,16 +1,14 @@
 #import <Foundation/Foundation.h>
-#import "RVTextFieldValidator.h"
+#import "RVFieldValidator.h"
 
 @class RVSwitchFieldValidator;
 
-@interface RVValidator : NSObject<RVTextFieldLiveValidationDelegate>
+@interface RVValidator : NSObject<RVFieldLiveValidationDelegate>
 
-@property(strong,nonatomic) NSArray<RVTextFieldValidator*> *textFieldValidators;
-@property(strong,nonatomic) NSArray<RVSwitchFieldValidator*> *switchFieldValidators;
+@property(strong,nonatomic) NSArray<RVFieldValidator*> *fieldValidators;
 @property (nonatomic, copy) void(^validationChanged)(BOOL valid);
 
-+ (RVValidator*)make:(NSArray<RVTextFieldValidator*>*)textFieldValidators;
-+ (RVValidator*)make:(NSArray<RVTextFieldValidator*>*)textFieldValidators switchFieldValidators:(NSArray<RVTextFieldValidator*>*)switchFieldValidators;
++ (RVValidator*)make:(NSArray<RVFieldValidator*>*)textFieldValidators;
 - (BOOL)validate;
 - (NSArray*)errors;
 

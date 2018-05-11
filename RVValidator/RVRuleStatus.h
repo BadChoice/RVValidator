@@ -1,6 +1,6 @@
 #import "RVValidationRule.h"
 
-@interface RVRuleSwitchStatus : RVValidationRule
+@interface RVRuleStatus : RVValidationRule
 
 @property(nonatomic) bool status;
 

@@ -4,29 +4,20 @@
 
 @implementation RVValidator
 
-+(RVValidator*)make:(NSArray<RVTextFieldValidator*>*)textFieldValidators{
++(RVValidator*)make:(NSArray<RVFieldValidator*>*)textFieldValidators{
     RVValidator * validator         = [RVValidator new];
-    validator.textFieldValidators   = textFieldValidators;
-    return validator;
-}
-
-+(RVValidator*)make:(NSArray<RVTextFieldValidator*>*)textFieldValidators switchFieldValidators:(NSArray<RVTextFieldValidator*>*)switchFieldValidators{
-    RVValidator * validator         = [RVValidator new];
-    validator.textFieldValidators   = textFieldValidators;
-    validator.switchFieldValidators = switchFieldValidators;
+    validator.fieldValidators   = textFieldValidators;
     return validator;
 }
 
 -(BOOL)validate{
-    return [self.textFieldValidators doesntContain:^BOOL(RVTextFieldValidator* textFieldValidator) {
-        return ! [textFieldValidator validate];
-    }] && [self.switchFieldValidators doesntContain:^BOOL(RVSwitchFieldValidator* switchFieldValidator) {
-        return ! [switchFieldValidator validate];
+    return [self.fieldValidators doesntContain:^BOOL(RVFieldValidator* fieldValidator) {
+        return ! [fieldValidator validate];
     }];
 }
 
 -(NSArray*)errors{
-    return [self.textFieldValidators pluck:@"errors"].flatten;    
+    return [self.fieldValidators pluck:@"errors"].flatten;
 }
 
 -(RVValidator*)addLiveValidation:(void(^)(BOOL isValid))validationChanged{
@@ -35,16 +26,16 @@
 }
 
 -(RVValidator*)addLiveValidation{
-    [self.textFieldValidators each:^(RVTextFieldValidator* textFieldValidator) {
-        textFieldValidator.delegate = self;
-        [textFieldValidator addLiveValidation];
+    [self.fieldValidators each:^(RVFieldValidator* fieldValidator) {
+        fieldValidator.delegate = self;
+        [fieldValidator addLiveValidation];
     }];
     [self validate];
     return self;
 }
 
 -(void)onValidationChanged{
-    if(self.validationChanged) self.validationChanged( self.errors.count == 0 );
+    if (self.validationChanged) self.validationChanged( self.errors.count == 0 );
 }
 
 @end

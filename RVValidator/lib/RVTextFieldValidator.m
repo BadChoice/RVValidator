@@ -1,6 +1,5 @@
 #import "RVTextFieldValidator.h"
 #import "RVValidationIndicatorView.h"
-#import "RVCollection.h"
 
 @implementation RVTextFieldValidator
 
@@ -18,43 +17,38 @@
     return fieldValidator;
 }
 
--(BOOL)validate{
-    [self.rules each:^(RVValidationRule* rule) {
-        [rule validate:self.textField.text];
-    }];
-    BOOL isValid = self.errors.count == 0;
-    
-    self.validIndicatorView.hidden = isValid;
-    self.textField.backgroundColor = isValid ? UIColor.whiteColor : self.getInvalidBackgroundColor;
-    if(self.delegate) [self.delegate onValidationChanged];
-    return isValid;
+- (void)validateRule:(RVValidationRule*)rule{
+    [rule validate:self.textField.text];
 }
 
--(void)addValidIndicatorView{
-    
+- (void)updateValidationStatus:(BOOL)isValid{
+    self.validIndicatorView.hidden = isValid;
+    self.textField.backgroundColor = isValid ? UIColor.whiteColor : self.getInvalidBackgroundColor;
+}
+
+- (void)addValidIndicatorView{
     self.validIndicatorView         = [RVValidationIndicatorView make];
     self.validIndicatorView.hidden  = YES;
     
-    if([self.textField isKindOfClass:UITextField.class]){
+    if ([self.textField isKindOfClass:UITextField.class]) {
         self.textField.rightViewMode            = UITextFieldViewModeAlways;
         self.textField.rightView                = self.validIndicatorView;
     }
 }
 
--(UIColor*)getInvalidBackgroundColor{
+- (UIColor*)getInvalidBackgroundColor{
     return [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
 }
 
--(void)addLiveValidation{
+- (void)addLiveValidation{
     [self addValidIndicatorView];
     [self validate];
     [self.textField addTarget:self action:@selector(validate) forControlEvents:UIControlEventEditingChanged];
 }
 
--(void)dealloc{
+- (void)dealloc{
     [self.textField removeTarget:self action:@selector(validate) forControlEvents:UIControlEventEditingChanged];
     self.textField  = nil;
-    self.rules      = nil;
 }
 
 @end

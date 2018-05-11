@@ -13,8 +13,9 @@
 #import "RVRuleMin.h"
 #import "RVRuleNotIn.h"
 #import "RVRuleIn.h"
-#import "RVRuleSwitchStatus.h"
+#import "RVRuleStatus.h"
 #import "RVSwitchFieldValidator.h"
+#import "RVTextFieldValidator.h"
 
 @interface RVValidatorTests : XCTestCase
 
@@ -30,8 +31,25 @@
     [super tearDown];
 }
 
--(void)test_can_validate_multiple_fields{
+-(void)test_can_validate_switch_field{
+    UISwitch*   switchField = [UISwitch new];
+
+    switchField.on = 0;
     
+    RVValidator* validator = [RVValidator make:@[
+        SFValidator(switchField, @"status:1")
+    ]];
+                              
+    XCTAssertFalse   ( [validator validate] );
+    XCTAssertEqual   (1, validator.errors.count);
+                              
+    switchField.on = 1;
+
+    XCTAssertTrue   ( [validator validate] );
+    XCTAssertEqual  (0, validator.errors.count);
+}
+-(void)test_can_validate_multiple_fields{
+
     UITextField* field1 = [UITextField new];
     UITextField* field2 = [UITextField new];
     UISwitch*   switchField = [UISwitch new];
@@ -39,23 +57,22 @@
     field1.text = @"hello baby";
     field2.text = @"bye";
     switchField.on = false;
-    
+
     RVValidator* validator = [RVValidator make:@[
         TFValidator(field1, @"required|email"),
         TFValidator(field2, @"size:3"),
-    ] switchFieldValidators:@[
         SFValidator(switchField, @"status:1")
     ]];
-                              
-    XCTAssertFalse  ( [validator validate] );
-    XCTAssertTrue   ( validator.errors.count == 2);
-                              
+
+    XCTAssertFalse   ( [validator validate] );
+    XCTAssertEqual   (2, validator.errors.count);
+
     field1.text = @"hello@baby.com";
     field2.text = @"bye";
     switchField.on = true;
 
     XCTAssertTrue   ( [validator validate] );
-    XCTAssertTrue   ( validator.errors.count == 0);
+    XCTAssertEqual  (0, validator.errors.count);
 }
 
 - (void)test_rule_required {
@@ -169,10 +186,10 @@
 }
 
 - (void)test_rule_switch_on {
-    XCTAssertFalse   ( [[RVRuleSwitchStatus make:@[@0]] validate:@"YES"]);
-    XCTAssertFalse   ( [[RVRuleSwitchStatus make:@[@1]] validate:@"NO"] );
-    XCTAssertTrue    ( [[RVRuleSwitchStatus make:@[@0]] validate:@"NO"] );
-    XCTAssertTrue    ( [[RVRuleSwitchStatus make:@[@1]] validate:@"YES"]);
+    XCTAssertFalse   ( [[RVRuleStatus make:@[@"0"]] validate:(NSString*)@1]);
+    XCTAssertFalse   ( [[RVRuleStatus make:@[@"1"]] validate:(NSString*)@0]);
+    XCTAssertTrue    ( [[RVRuleStatus make:@[@"0"]] validate:(NSString*)@0]);
+    XCTAssertTrue    ( [[RVRuleStatus make:@[@"1"]] validate:(NSString*)@1]);
 }
 
 @end

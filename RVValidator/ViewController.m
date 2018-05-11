@@ -1,6 +1,7 @@
 #import "ViewController.h"
 #import "RVConfirmationRule.h"
 #import "RVSwitchFieldValidator.h"
+#import "RVTextFieldValidator.h"
 
 @interface ViewController ()
 
@@ -19,9 +20,8 @@
         TFValidator(self.dateField,             @"date:dd-MM-yyyy"),
         TFValidator(self.sizeField,             @"size:4"),
         TFValidator(self.password,              @"required|size:4"),
-        [RVTextFieldValidator make:self.passwordConfirmation rulesArray:@[[RVConfirmationRule makeFor:self.password]]]
-        ] switchFieldValidators:@[
             SFValidator(self.switchField,           @"status:1"),
+        [RVTextFieldValidator make:self.passwordConfirmation rulesArray:@[[RVConfirmationRule makeFor:self.password]]]
         ]
      ];
     

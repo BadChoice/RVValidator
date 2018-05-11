@@ -21,8 +21,35 @@
     return [ruleClass new];
 }
 
+// ABSTRACT
+- (void)addLiveValidation{
+
+}
+- (void)updateValidationStatus:(BOOL)isValid {
+
+}
+
+-(void)validateRule:(RVValidationRule*)rule{
+    [NSException raise:@"Abstract" format:@"This should be implemented by subclass"];
+}
+
+-(BOOL)validate{
+    [self.rules each:^(RVValidationRule* rule) {
+        [self validateRule:rule];
+    }];
+    BOOL isValid = self.errors.count == 0;
+
+    [self updateValidationStatus:isValid];
+    if (self.delegate) [self.delegate onValidationChanged];
+    return isValid;
+}
+
 -(NSArray*)errors{
     return [self.rules flatten:@"errors"];
+}
+
+-(void)dealloc{
+    self.rules      = nil;
 }
 
 @end

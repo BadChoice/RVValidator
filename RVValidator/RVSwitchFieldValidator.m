@@ -18,27 +18,12 @@
     return fieldValidator;
 }
 
--(BOOL)validate{
-    [self.rules each:^(RVValidationRule* rule) {
-        [rule validate: self.switchField.on ? @"YES" : @"NO"];
-    }];
-    BOOL isValid = self.errors.count == 0;
-
-    self.validIndicatorView.hidden = isValid;
-    self.switchField.backgroundColor = isValid ? UIColor.whiteColor : self.getInvalidBackgroundColor;
-    if(self.delegate) [self.delegate onValidationChanged];
-    return isValid;
+-(void)validateRule:(RVValidationRule*)rule{
+    [rule validate:(NSString*)@(self.switchField.on)];
 }
 
--(void)addValidIndicatorView{
-
-    self.validIndicatorView         = [RVValidationIndicatorView make];
-    self.validIndicatorView.hidden  = YES;
-
-    if([self.switchField isKindOfClass:UISwitch.class]){
-//        self.switchField.rightViewMode            = UISwitchViewModeAlways;
-//        self.switchField.rightView                = self.validIndicatorView;
-    }
+- (void)updateValidationStatus:(BOOL)isValid {
+    self.switchField.tintColor = isValid ? UIApplication.sharedApplication.windows.firstObject.tintColor : self.getInvalidBackgroundColor;
 }
 
 -(UIColor*)getInvalidBackgroundColor{
@@ -46,15 +31,13 @@
 }
 
 -(void)addLiveValidation{
-    [self addValidIndicatorView];
     [self validate];
-    [self.switchField addTarget:self action:@selector(validate) forControlEvents:UIControlEventEditingChanged];
+    [self.switchField addTarget:self action:@selector(validate) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void)dealloc{
-    [self.switchField removeTarget:self action:@selector(validate) forControlEvents:UIControlEventEditingChanged];
+    [self.switchField removeTarget:self action:@selector(validate) forControlEvents:UIControlEventValueChanged];
     self.switchField    = nil;
-    self.rules          = nil;
 }
 
 @end
