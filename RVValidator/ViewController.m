@@ -24,7 +24,7 @@
         [RVTextFieldValidator make:self.passwordConfirmation rulesArray:@[[RVConfirmationRule makeFor:self.password]]]
         ]
      ];
-    
+
     [validator addLiveValidation];
 }
 

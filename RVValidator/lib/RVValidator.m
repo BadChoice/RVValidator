@@ -4,16 +4,16 @@
 
 @implementation RVValidator
 
-+(RVValidator*)make:(NSArray<RVFieldValidator*>*)textFieldValidators{
-    RVValidator * validator         = [RVValidator new];
-    validator.fieldValidators   = textFieldValidators;
++(RVValidator*)make:(NSArray<RVFieldValidator*>*)fieldValidators{
+    RVValidator * validator     = [RVValidator new];
+    validator.fieldValidators   = fieldValidators;
     return validator;
 }
 
 -(BOOL)validate{
-    return [self.fieldValidators doesntContain:^BOOL(RVFieldValidator* fieldValidator) {
-        return ! [fieldValidator validate];
-    }];
+    return [[self.fieldValidators reject:^BOOL(RVFieldValidator* fieldValidator) {
+        return [fieldValidator validate];
+    }] count] == 0;
 }
 
 -(NSArray*)errors{

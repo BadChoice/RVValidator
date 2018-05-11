@@ -1,17 +1,15 @@
 #import "RVSwitchFieldValidator.h"
-#import "RVValidationIndicatorView.h"
-#import "RVCollection.h"
 
 @implementation RVSwitchFieldValidator
 
-+(RVSwitchFieldValidator*)make:(UISwitch*)switchField rulesArray:(NSArray<RVValidationRule*>*)rulesArray{
++ (RVSwitchFieldValidator*)make:(UISwitch*)switchField rulesArray:(NSArray<RVValidationRule*>*)rulesArray{
     RVSwitchFieldValidator* fieldValidator = [RVSwitchFieldValidator new];
     fieldValidator.switchField           = switchField;
     fieldValidator.rules                 = rulesArray;
     return fieldValidator;
 }
 
-+(RVSwitchFieldValidator*)make:(UISwitch*)switchField rules:(NSString*)rules{
++ (RVSwitchFieldValidator*)make:(UISwitch*)switchField rules:(NSString*)rules{
     RVSwitchFieldValidator* fieldValidator = [RVSwitchFieldValidator new];
     fieldValidator.switchField           = switchField;
     fieldValidator.rules                 = [self.class rulesFromString:rules];

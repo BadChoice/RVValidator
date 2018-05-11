@@ -31,6 +31,29 @@
     [super tearDown];
 }
 
+-(void)test_can_validate_multiple_text_fields{
+
+    UITextField* field1 = [UITextField new];
+    UITextField* field2 = [UITextField new];
+
+    field1.text = @"hello baby";
+    field2.text = @"bye";
+
+    RVValidator* validator = [RVValidator make:@[
+        TFValidator(field1, @"required|email"),
+        TFValidator(field2, @"size:3"),
+    ]];
+
+    XCTAssertFalse   ( [validator validate] );
+    XCTAssertEqual   (1, validator.errors.count);
+
+    field1.text = @"hello@baby.com";
+    field2.text = @"bye";
+
+    XCTAssertTrue   ( [validator validate] );
+    XCTAssertEqual  (0, validator.errors.count);
+}
+
 -(void)test_can_validate_switch_field{
     UISwitch*   switchField = [UISwitch new];
 

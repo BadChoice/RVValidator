@@ -3,14 +3,14 @@
 
 @implementation RVTextFieldValidator
 
-+(RVTextFieldValidator*)make:(UITextField*)textField rulesArray:(NSArray<RVValidationRule*>*)rulesArray{
++ (RVTextFieldValidator*)make:(UITextField*)textField rulesArray:(NSArray<RVValidationRule*>*)rulesArray{
     RVTextFieldValidator* fieldValidator = [RVTextFieldValidator new];
     fieldValidator.textField             = textField;
     fieldValidator.rules                 = rulesArray;
     return fieldValidator;
 }
 
-+(RVTextFieldValidator*)make:(UITextField*)textField rules:(NSString*)rules{
++ (RVTextFieldValidator*)make:(UITextField*)textField rules:(NSString*)rules{
     RVTextFieldValidator* fieldValidator = [RVTextFieldValidator new];
     fieldValidator.textField             = textField;
     fieldValidator.rules                 = [self.class rulesFromString:rules];
