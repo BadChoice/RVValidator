@@ -11,7 +11,7 @@
 }
 
 -(BOOL)validate{
-    return º[self.fieldValidators reject:^BOOL(RVFieldValidator* fieldValidator) {
+    return [self.fieldValidators reject:^BOOL(RVFieldValidator* fieldValidator) {
         return [fieldValidator validate];
     }].count == 0;
 }
@@ -39,4 +39,5 @@
 }
 
 @end
+
 

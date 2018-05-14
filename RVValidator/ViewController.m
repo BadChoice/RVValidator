@@ -20,7 +20,7 @@
         TFValidator(self.dateField,             @"date:dd-MM-yyyy"),
         TFValidator(self.sizeField,             @"size:4"),
         TFValidator(self.password,              @"required|size:4"),
-            SFValidator(self.switchField,           @"status:1"),
+        SFValidator(self.switchField,           @"status:1"),
         [RVTextFieldValidator make:self.passwordConfirmation rulesArray:@[[RVConfirmationRule makeFor:self.password]]]
         ]
      ];
