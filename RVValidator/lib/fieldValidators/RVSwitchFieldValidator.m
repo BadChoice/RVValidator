@@ -30,11 +30,9 @@
 
 - (void)addLiveValidation{
     [self validate];
-    [self.switchField addTarget:self action:@selector(validate) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void)dealloc{
-    [self.switchField removeTarget:self action:@selector(validate) forControlEvents:UIControlEventValueChanged];
     self.switchField    = nil;
 }
 
