@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *sizeField;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *passwordConfirmation;
+@property (weak, nonatomic) IBOutlet UISwitch *switchField;
 
 @end
 

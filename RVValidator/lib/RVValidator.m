@@ -1,22 +1,23 @@
 #import "RVValidator.h"
 #import "RVCollection.h"
+#import "RVSwitchFieldValidator.h"
 
 @implementation RVValidator
 
-+(RVValidator*)make:(NSArray<RVTextFieldValidator*>*)textFieldValidators{
-    RVValidator * validator         = [RVValidator new];
-    validator.textFieldValidators   = textFieldValidators;
++(RVValidator*)make:(NSArray<RVFieldValidator*>*)fieldValidators{
+    RVValidator * validator     = [RVValidator new];
+    validator.fieldValidators   = fieldValidators;
     return validator;
 }
 
 -(BOOL)validate{
-    return [self.textFieldValidators doesntContain:^BOOL(RVTextFieldValidator* textFieldValidator) {
-        return ! [textFieldValidator validate];
-    }];
+    return [self.fieldValidators reject:^BOOL(RVFieldValidator* fieldValidator) {
+        return [fieldValidator validate];
+    }].count == 0;
 }
 
 -(NSArray*)errors{
-    return [self.textFieldValidators pluck:@"errors"].flatten;    
+    return [self.fieldValidators pluck:@"errors"].flatten;
 }
 
 -(RVValidator*)addLiveValidation:(void(^)(BOOL isValid))validationChanged{
@@ -25,16 +26,18 @@
 }
 
 -(RVValidator*)addLiveValidation{
-    [self.textFieldValidators each:^(RVTextFieldValidator* textFieldValidator) {
-        textFieldValidator.delegate = self;
-        [textFieldValidator addLiveValidation];
+    [self.fieldValidators each:^(RVFieldValidator* fieldValidator) {
+        fieldValidator.delegate = self;
+        [fieldValidator addLiveValidation];
     }];
     [self validate];
     return self;
 }
 
 -(void)onValidationChanged{
-    if(self.validationChanged) self.validationChanged( self.errors.count == 0 );
+    if (self.validationChanged) self.validationChanged( self.errors.count == 0 );
 }
 
 @end
+
+
