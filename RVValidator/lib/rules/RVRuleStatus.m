@@ -14,7 +14,7 @@
 
 -(BOOL)performValidation:(NSString*)text{
     if ([text isKindOfClass:NSNumber.class]) {
-        return [self validateForNumber:text];
+        return [self validateForNumber:(NSNumber*)text];
     }
     return [self validateForText:text];
 }

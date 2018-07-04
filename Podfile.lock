@@ -1,5 +1,5 @@
 PODS:
-  - Collection (1.9.5)
+  - Collection (1.9.8)
 
 DEPENDENCIES:
   - Collection
@@ -9,8 +9,8 @@ SPEC REPOS:
     - Collection
 
 SPEC CHECKSUMS:
-  Collection: 78640b34ee2bcb2821a976212b2809d2d1cd2ea4
+  Collection: 11e9dd233eea8fc9d33db1aec79751644eedcadf
 
 PODFILE CHECKSUM: a377c20c726b86164277eab2b3b8558e456e360a
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3
