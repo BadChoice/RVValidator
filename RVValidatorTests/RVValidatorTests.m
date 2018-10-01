@@ -220,8 +220,6 @@
     XCTAssertFalse([[RVRuleIP new] validate:@"123.123.123.523"]);
     XCTAssertFalse( [[RVRuleIP new] validate:@"192.168.1"]);
     XCTAssertFalse( [[RVRuleIP new] validate:@"ABCD"]);
-    XCTAssertFalse( [[RVRuleIP new] validate:@""]);
-    XCTAssertFalse( [[RVRuleIP new] validate:nil]);
     XCTAssertTrue( [[RVRuleIP new] validate:@"123.123.123.123"]);
 }
 
