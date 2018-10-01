@@ -16,6 +16,7 @@
 #import "RVRuleStatus.h"
 #import "RVSwitchFieldValidator.h"
 #import "RVTextFieldValidator.h"
+#import "RVRuleIP.h"
 
 @interface RVValidatorTests : XCTestCase
 
@@ -213,6 +214,15 @@
     XCTAssertFalse   ( [[RVRuleStatus make:@[@"1"]] validate:(NSString*)@0]);
     XCTAssertTrue    ( [[RVRuleStatus make:@[@"0"]] validate:(NSString*)@0]);
     XCTAssertTrue    ( [[RVRuleStatus make:@[@"1"]] validate:(NSString*)@1]);
+}
+
+- (void)test_rules_ip {
+    XCTAssertFalse([[RVRuleIP new] validate:@"123.123.123.523"]);
+    XCTAssertFalse( [[RVRuleIP new] validate:@"192.168.1"]);
+    XCTAssertFalse( [[RVRuleIP new] validate:@"ABCD"]);
+    XCTAssertFalse( [[RVRuleIP new] validate:@""]);
+    XCTAssertFalse( [[RVRuleIP new] validate:nil]);
+    XCTAssertTrue( [[RVRuleIP new] validate:@"123.123.123.123"]);
 }
 
 @end
