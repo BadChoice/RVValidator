@@ -12,9 +12,6 @@
 }
 
 - (BOOL)isValidIpAddress:(NSString *)ip {
-
-    if (ip == nil || [ip isEqual:NSNull.null] || [ip isEqualToString:@""]) return false;
-
     const char *utf8 = [ip UTF8String];
 
     // Check valid IPv4.
