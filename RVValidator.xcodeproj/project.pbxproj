@@ -32,6 +32,7 @@
 		77510197BC87FF3AC98C13D7 /* RVRuleNotIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510029D4E5D7B0CC0D025F /* RVRuleNotIn.m */; };
 		77510444618379D41CB175F3 /* RVRuleIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 775109E3A572550FA64EB34D /* RVRuleIn.m */; };
 		B10067C5921B2CFF86B1F5CC /* libPods-RVValidator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE4F834C420613989DB45CB /* libPods-RVValidator.a */; };
+		B118F17779CEA389821D73FD /* RVRuleIP.m in Sources */ = {isa = PBXBuildFile; fileRef = B118F9F3F7D5307F7093764E /* RVRuleIP.m */; };
 		B83BF7E820A97F5A00E2F1B1 /* RVFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B83BF7E620A97F5A00E2F1B1 /* RVFieldValidator.m */; };
 		B83BF7ED20A97F6B00E2F1B1 /* RVTextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B83BF7EB20A97F6B00E2F1B1 /* RVTextFieldValidator.m */; };
 		B83BF7EE20A97F6B00E2F1B1 /* RVSwitchFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B83BF7EC20A97F6B00E2F1B1 /* RVSwitchFieldValidator.m */; };
@@ -104,6 +105,8 @@
 		775109E3A572550FA64EB34D /* RVRuleIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleIn.m; path = lib/rules/RVRuleIn.m; sourceTree = "<group>"; };
 		77510F62A109D46B9DF24AC0 /* RVRuleIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleIn.h; path = lib/rules/RVRuleIn.h; sourceTree = "<group>"; };
 		A92E4626397225EAF5607BD8 /* Pods-RVValidator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVValidator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RVValidator/Pods-RVValidator.debug.xcconfig"; sourceTree = "<group>"; };
+		B118F499CDC4D5F5E34CC421 /* RVRuleIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVRuleIP.h; path = lib/rules/RVRuleIP.h; sourceTree = "<group>"; };
+		B118F9F3F7D5307F7093764E /* RVRuleIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVRuleIP.m; path = lib/rules/RVRuleIP.m; sourceTree = "<group>"; };
 		B83BF7E620A97F5A00E2F1B1 /* RVFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVFieldValidator.m; path = lib/RVFieldValidator.m; sourceTree = "<group>"; };
 		B83BF7E720A97F5A00E2F1B1 /* RVFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVFieldValidator.h; path = lib/RVFieldValidator.h; sourceTree = "<group>"; };
 		B83BF7E920A97F6B00E2F1B1 /* RVSwitchFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVSwitchFieldValidator.h; path = lib/fieldValidators/RVSwitchFieldValidator.h; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				77510029D4E5D7B0CC0D025F /* RVRuleNotIn.m */,
 				77510F62A109D46B9DF24AC0 /* RVRuleIn.h */,
 				775109E3A572550FA64EB34D /* RVRuleIn.m */,
+				B118F499CDC4D5F5E34CC421 /* RVRuleIP.h */,
+				B118F9F3F7D5307F7093764E /* RVRuleIP.m */,
 			);
 			name = rules;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 				764D15B61F756A3B00441501 /* RVRuleDate.m in Sources */,
 				77510444618379D41CB175F3 /* RVRuleIn.m in Sources */,
 				77510197BC87FF3AC98C13D7 /* RVRuleNotIn.m in Sources */,
+				B118F17779CEA389821D73FD /* RVRuleIP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
